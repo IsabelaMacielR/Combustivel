@@ -4,11 +4,27 @@
              x:Class="Combustivel.Views.ItemDetailPage"
              Title="{Binding Title}">
 
-    <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
+    <StackLayout Spacing="5" Padding="15">
+        <Label Text="Automóvel:" FontSize="Medium" />
         <Label Text="{Binding Text}" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
+        <Label Text="Modelo:" FontSize="Medium" />
         <Label Text="{Binding Description}" FontSize="Small"/>
+        <Label Text="Placa:" FontSize="Medium" />
+        <Label Text="{Binding Placa}" FontSize="Small"/>
+        <Label Text="Chassi:" FontSize="Medium" />
+        <Label Text="{Binding Chassi}" FontSize="Small"/>
+        <Label Text="Ano:" FontSize="Medium" />
+        <Label Text="{Binding Ano}" FontSize="Small"/>
+        <Label Text="Cor:" FontSize="Medium" />
+        <Label Text="{Binding Cor}" FontSize="Small"/>
+        <Label Text="Horímetro:" FontSize="Medium" />
+        <Label Text="{Binding Horimetro}" FontSize="Small"/>
+        <Label Text="Km:" FontSize="Medium" />
+        <Label Text="{Binding Km}" FontSize="Small"/>
+        <Label Text="Combustível:" FontSize="Medium" />
+        <Label Text="{Binding Combustivel}" FontSize="Small"/>
+        <Label Text="Secretaria:" FontSize="Medium" />
+        <Label Text="{Binding Secretaria}" FontSize="Small"/>
     </StackLayout>
     
 </ContentPage>
