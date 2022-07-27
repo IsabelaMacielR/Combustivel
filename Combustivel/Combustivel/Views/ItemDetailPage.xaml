@@ -4,6 +4,10 @@
              x:Class="Combustivel.Views.ItemDetailPage"
              Title="{Binding Title}">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Desativar" Command="{Binding DesItemCommand}" />
+    </ContentPage.ToolbarItems>
+
     <StackLayout Spacing="5" Padding="15">
         <Label Text="Automóvel:" FontSize="Medium" />
         <Label Text="{Binding Text}" FontSize="Small"/>
@@ -26,5 +30,5 @@
         <Label Text="Secretaria:" FontSize="Medium" />
         <Label Text="{Binding Secretaria}" FontSize="Small"/>
     </StackLayout>
-    
+
 </ContentPage>

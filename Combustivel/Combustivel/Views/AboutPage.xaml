@@ -39,7 +39,7 @@
                         TextColor="White" />
             </StackLayout>
         </ScrollView>
-        <ScrollView Grid.Row="1">
+        <ScrollView Grid.Row="2">
             <StackLayout BackgroundColor="#1e7d9e" Orientation="Vertical" VerticalOptions="End" >
                 <StackLayout VerticalOptions="EndAndExpand" >
                     <ContentView VerticalOptions="FillAndExpand" Padding="0,20,0,0">

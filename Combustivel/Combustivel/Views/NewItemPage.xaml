@@ -2,41 +2,51 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Combustivel.Views.NewItemPage"
-             Shell.PresentationMode="ModalAnimated"
-             Title="New Item"
+             Title="Novo Item"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Novo"  />
-    </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
-        <StackLayout Spacing="3" Padding="15">
-            <Label Text="Automóvel" FontSize="Medium" />
-            <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
-            <Label Text="Modelo" FontSize="Medium" />
-            <Editor Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+        <ScrollView>
+            <StackLayout Spacing="3" Padding="15">
+                <Label Text="Automóvel" FontSize="Medium" />
+            <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" Placeholder="Automóvel"/>
+                <Label Text="Modelo" FontSize="Medium"/>
+                <Picker x:Name="Description" Title="--Selecionar Modelo--">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Baboon</x:String>
+                            <x:String>Capuchin Monkey</x:String>
+                            <x:String>Blue Monkey</x:String>
+                            <x:String>Squirrel Monkey</x:String>
+                            <x:String>Golden Lion Tamarin</x:String>
+                            <x:String>Howler Monkey</x:String>
+                            <x:String>Japanese Macaque</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
             <Label Text="Placa" FontSize="Medium" />
-            <Editor Text="{Binding Placa, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+            <Entry Text="{Binding Placa, Mode=TwoWay}" FontSize="Medium" Margin="0" Placeholder="Placa"/>
             <Label Text="Chassi" FontSize="Medium" />
-            <Editor Text="{Binding Chassi, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+            <Entry Text="{Binding Chassi, Mode=TwoWay}" FontSize="Medium" Margin="0" Placeholder="Chassi"/>
             <Label Text="Ano" FontSize="Medium" />
-            <Editor Text="{Binding Ano, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+            <Entry Text="{Binding Ano, Mode=TwoWay}" FontSize="Medium" Margin="0" Placeholder="Ano"/>
             <Label Text="Cor" FontSize="Medium" />
-            <Editor Text="{Binding Cor, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+            <Entry Text="{Binding Cor, Mode=TwoWay}" FontSize="Medium" Margin="0" Placeholder="Cor do Automóvel"/>
             <Label Text="Horímetro" FontSize="Medium" />
-            <Editor Text="{Binding Horimetro, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+            <Entry Text="{Binding Horimetro, Mode=TwoWay}" FontSize="Medium" Margin="0" Placeholder="Horímetro"/>
             <Label Text="Quilometragem" FontSize="Medium" />
-            <Editor Text="{Binding Km, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+            <Entry Text="{Binding Km, Mode=TwoWay}" FontSize="Medium" Margin="0" Placeholder="KM"/>
             <Label Text="Limite de Combustível" FontSize="Medium" />
-            <Editor Text="{Binding Combustivel, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+                <Entry Text="{Binding Combustivel, Mode=TwoWay}" FontSize="Medium" Margin="0" Placeholder="Limite do Tanque de Combustível"/>
             <Label Text="Secretaria" FontSize="Medium" />
-            <Editor Text="{Binding Secretaria, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
-            <StackLayout Orientation="Horizontal">
-                <Button Text="Cancelar" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
-                <Button Text="Salvar" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
-            </StackLayout>
-        </StackLayout>
+            <Entry Text="{Binding Secretaria, Mode=TwoWay}" FontSize="Medium" Margin="0" Placeholder="Secretaria"/>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Cancelar" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                    <Button Text="Salvar" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+                </StackLayout>
+            </StackLayout> 
+        </ScrollView>
     </ContentPage.Content>
     
 </ContentPage>

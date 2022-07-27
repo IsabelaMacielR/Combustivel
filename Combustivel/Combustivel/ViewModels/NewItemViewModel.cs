@@ -1,14 +1,22 @@
 ﻿using Combustivel.Models;
+using Combustivel.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
+using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+using static Android.Util.EventLogTags;
 
 namespace Combustivel.ViewModels
 {
     public class NewItemViewModel : BaseViewModel
     {
+        public Item Item { get; set; }
+
         private string text;
         private string description;
         private string placa;
@@ -20,18 +28,26 @@ namespace Combustivel.ViewModels
         private string combustivel;
         private string secretaria;
 
+        
+        //public List<Description> DescriptionsList { get; set; }
+
         public NewItemViewModel()
         {
+
             SaveCommand = new Command(OnSave, ValidateSave);
             CancelCommand = new Command(OnCancel);
             this.PropertyChanged +=
                 (_, __) => SaveCommand.ChangeCanExecute();
         }
 
+        private void NewItemPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private bool ValidateSave()
         {
             return !String.IsNullOrWhiteSpace(text)
-                && !String.IsNullOrWhiteSpace(description)
                 && !String.IsNullOrWhiteSpace(placa)
                 && !String.IsNullOrWhiteSpace(chassi)
                 && !String.IsNullOrWhiteSpace(ano)
@@ -48,7 +64,7 @@ namespace Combustivel.ViewModels
             set => SetProperty(ref text, value);
         }
 
-        public string Description
+        public string Descriptions
         {
             get => description;
             set => SetProperty(ref description, value);
@@ -117,7 +133,7 @@ namespace Combustivel.ViewModels
             {
                 Id = Guid.NewGuid().ToString(),
                 Text = Text,
-                Description = Description,
+                Description = Descriptions,
                 Placa = Placa,
                 Chassi = Chassi,
                 Ano = Ano,

@@ -7,7 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Combustivel.Android", "Comb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Combustivel.iOS", "Combustivel\Combustivel.iOS\Combustivel.iOS.csproj", "{A21504E1-8E4C-49DB-A5EE-7E16839A9680}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Combustivel", "Combustivel\Combustivel\Combustivel.csproj", "{EA926482-FF71-4FC7-B41C-9DD4BBCBB572}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Combustivel", "Combustivel\Combustivel\Combustivel.csproj", "{EA926482-FF71-4FC7-B41C-9DD4BBCBB572}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{16A28486-AC33-4275-9CB9-7F83A7CDACA3}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

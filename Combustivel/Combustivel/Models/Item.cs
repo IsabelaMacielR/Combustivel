@@ -15,6 +15,10 @@ namespace Combustivel.Models
         public string Km { get; set; }
         public string Combustivel { get; set; }
         public string Secretaria { get; set; }
+        public string Nome { get; set; }
+        public string CPF { get; set; }
+        public string Vencimento { get; set; }
+        public string Categoria { get; set; }
 
     }
 }

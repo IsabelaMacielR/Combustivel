@@ -11,5 +11,11 @@ namespace Combustivel.Services
         Task<bool> DeleteItemAsync(string id);
         Task<T> GetItemAsync(string id);
         Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
+
+        Task<bool> AddUserAsync(T user);
+        Task<bool> UpdateUserAsync(T user);
+        Task<bool> DeleteUserAsync(string id);
+        Task<T> GetUserAsync(string id);
+        Task<IEnumerable<T>> GetUserAsync(bool forceRefresh = false);
     }
 }

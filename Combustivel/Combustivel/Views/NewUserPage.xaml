@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Combustivel.Views.NewUserPage"
+             Title="Novo Usuário"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="3" Padding="15">
+                <Label Text="Nome" FontSize="Medium" />
+                    <Entry Text="{Binding Nome, Mode=TwoWay}" FontSize="Medium" Placeholder="Nome"/>
+                <Label Text="CPF" FontSize="Medium" />
+                    <Entry Text="{Binding CPF, Mode=TwoWay}" FontSize="Medium" Margin="0" Placeholder="CPF"/>
+                <Label Text="Vencimento" FontSize="Medium" />
+                    <Entry Text="{Binding Vencimento, Mode=TwoWay}" FontSize="Medium" Margin="0" Placeholder="Vencimento CNH"/>
+                <Label Text="Categoria" FontSize="Medium" />
+                    <Entry Text="{Binding Categoria, Mode=TwoWay}" FontSize="Medium" Margin="0" Placeholder="Categoria da CNH"/>
+                <Label Text="Secretaria" FontSize="Medium" />
+                    <Entry Text="{Binding Secretaria, Mode=TwoWay}" FontSize="Medium" Margin="0" Placeholder="Secretaria"/>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Cancelar" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                    <Button Text="Salvar" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+                </StackLayout>
+            </StackLayout> 
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>
