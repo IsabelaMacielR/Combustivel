@@ -15,6 +15,8 @@ namespace Combustivel
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
             Routing.RegisterRoute(nameof(UserDetailPage), typeof(UserDetailPage));
             Routing.RegisterRoute(nameof(NewUserPage), typeof(NewUserPage));
+            Routing.RegisterRoute(nameof(DriverDetailPage), typeof(DriverDetailPage));
+            Routing.RegisterRoute(nameof(NewDriverPage), typeof(NewDriverPage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

@@ -8,11 +8,16 @@ namespace Combustivel.Services
 {
     public class MockDataStore : IDataStore<Item>
     {
-        readonly List<Item> items;
+        //readonly List<Item> items;
         readonly List<Item> users;
+        //readonly List<Item> drivers;
+
+        public static IList<Item> items { get; private set; }
+        public static IList<Item> drivers { get; private set; }
 
         public MockDataStore()
         {
+           
             items = new List<Item>()
             {
                 new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
@@ -31,6 +36,14 @@ namespace Combustivel.Services
                 new Item { Id = Guid.NewGuid().ToString(), Nome = "Name", CPF="123456789" },
                 new Item { Id = Guid.NewGuid().ToString(), Nome = "Name", CPF="123456789" }
             };
+
+            drivers = new List<Item>()
+            {
+                new Item { Id = Guid.NewGuid().ToString(), Nome = "Name", CPF="123456789" },
+                new Item { Id = Guid.NewGuid().ToString(), Nome = "Name", CPF="123456789" },
+                new Item { Id = Guid.NewGuid().ToString(), Nome = "Name", CPF="123456789" },
+                new Item { Id = Guid.NewGuid().ToString(), Nome = "Name", CPF="123456789" },
+            };
         }
 
         public async Task<bool> AddItemAsync(Item item)
@@ -47,7 +60,14 @@ namespace Combustivel.Services
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
+        public async Task<bool> AddDriverAsync(Item driver)
+        {
+            drivers.Add(driver);
+
+            return await Task.FromResult(true);
+        }
+
+            public async Task<bool> UpdateItemAsync(Item item)
         {
             var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
             items.Remove(oldItem);
@@ -61,6 +81,15 @@ namespace Combustivel.Services
             var oldUser = users.Where((Item arg) => arg.Id == user.Id).FirstOrDefault();
             users.Remove(oldUser);
             users.Add(user);
+
+            return await Task.FromResult(true);
+        }
+
+        public async Task<bool> UpdateDriverAsync(Item driver)
+        {
+            var oldDriver = drivers.Where((Item arg) => arg.Id == driver.Id).FirstOrDefault();
+            drivers.Remove(oldDriver);
+            drivers.Add(driver);
 
             return await Task.FromResult(true);
         }
@@ -81,6 +110,14 @@ namespace Combustivel.Services
             return await Task.FromResult(true);
         }
 
+        public async Task<bool> DeleteDriverAsync(string id)
+        {
+            var oldDriver = drivers.Where((Item arg) => arg.Id == id).FirstOrDefault();
+            drivers.Remove(oldDriver);
+
+            return await Task.FromResult(true);
+        }
+
         public async Task<Item> GetItemAsync(string id)
         {
             return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
@@ -91,6 +128,12 @@ namespace Combustivel.Services
             return await Task.FromResult(users.FirstOrDefault(s => s.Id == id));
         }
 
+        public async Task<Item> GetDriverAsync(string id)
+        {
+            return await Task.FromResult(drivers.FirstOrDefault(s => s.Id == id));
+        }
+
+
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
@@ -99,6 +142,11 @@ namespace Combustivel.Services
         public async Task<IEnumerable<Item>> GetUserAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(users);
+        }
+
+        public async Task<IEnumerable<Item>> GetDriverAsync(bool forceRefresh = false)
+        {
+            return await Task.FromResult(drivers);
         }
     }
 

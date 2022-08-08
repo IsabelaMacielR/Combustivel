@@ -8,21 +8,40 @@ using System.Windows.Input;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using static Android.Util.EventLogTags;
+using System.Diagnostics;
+using Combustivel.Services;
 
 namespace Combustivel.ViewModels
 {
-    public class NewUserViewModel : BaseViewModel
+    public class NewDriverViewModel : BaseViewModel
     {
-        public Item User { get; set; }
-
         private string nome;
         private string cpf;
-        private string tipo;
+        private string vencimento;
+        private string categoria;
+        private string veiculo;
+        private string secretaria;
 
+        public IList<Item> items { get { return MockDataStore.items; } }
+
+        Item Selecteditem;
+
+        public Item selecteditem
+        {
+            get { return selecteditem; }
+            set
+            {
+                if (selecteditem != value)
+                {
+                    selecteditem = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
         //public List<Description> DescriptionsList { get; set; }
 
-        public NewUserViewModel()
+        public NewDriverViewModel()
         {
 
             SaveCommand = new Command(OnSave, ValidateSave);
@@ -35,7 +54,7 @@ namespace Combustivel.ViewModels
         {
             return !String.IsNullOrWhiteSpace(nome)
                 && !String.IsNullOrWhiteSpace(cpf)
-                && !String.IsNullOrWhiteSpace(tipo);
+                && !String.IsNullOrWhiteSpace(secretaria);
         }
 
         public string Nome
@@ -50,10 +69,28 @@ namespace Combustivel.ViewModels
             set => SetProperty(ref cpf, value);
         }
 
-        public string Tipo
+        public string Vencimento
         {
-            get => tipo;
-            set => SetProperty(ref tipo, value);
+            get => vencimento;
+            set => SetProperty(ref vencimento, value);
+        }
+
+        public string Categoria
+        {
+            get => categoria;
+            set => SetProperty(ref categoria, value);
+        }
+
+        public string Veiculo
+        {
+            get => veiculo;
+            set => SetProperty(ref veiculo, value);
+        }
+
+        public string Secretaria
+        {
+            get => secretaria;
+            set => SetProperty(ref secretaria, value);
         }
 
         public Command SaveCommand { get; }
@@ -67,15 +104,18 @@ namespace Combustivel.ViewModels
 
         private async void OnSave()
         {
-            Item newUser = new Item()
+            Item newDriver = new Item()
             {
                 Id = Guid.NewGuid().ToString(),
                 Nome = Nome,
                 CPF = CPF,
-                Tipo = Tipo,
+                Vencimento = Vencimento,
+                Categoria = categoria,
+                Veiculo = Veiculo,
+                Secretaria = Secretaria
             };
 
-            await DataStore.AddUserAsync(newUser);
+            await DataStore.AddDriverAsync(newDriver);
 
             // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("..");

@@ -17,11 +17,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\NewDriverPage.xaml.cs">
+      <DependentUpon>NewDriverPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\UserDetailPage.xaml.cs">
       <DependentUpon>UserDetailPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\DriverDetailPage.xaml.cs">
+      <DependentUpon>DriverDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\UserPage.xaml.cs">
       <DependentUpon>UserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DriverPage.xaml.cs">
+      <DependentUpon>DriverPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\NewUserPage.xaml.cs">
       <DependentUpon>NewUserPage.xaml</DependentUpon>

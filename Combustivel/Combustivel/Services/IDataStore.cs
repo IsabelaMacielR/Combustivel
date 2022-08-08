@@ -17,5 +17,11 @@ namespace Combustivel.Services
         Task<bool> DeleteUserAsync(string id);
         Task<T> GetUserAsync(string id);
         Task<IEnumerable<T>> GetUserAsync(bool forceRefresh = false);
+
+        Task<bool> AddDriverAsync(T driver);
+        Task<bool> UpdateDriverAsync(T driver);
+        Task<bool> DeleteDriverAsync(string id);
+        Task<T> GetDriverAsync(string id);
+        Task<IEnumerable<T>> GetDriverAsync(bool forceRefresh = false);
     }
 }

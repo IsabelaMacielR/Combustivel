@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Combustivel.Views.DriverDetailPage"
+             Title="{Binding Title}">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Excluir" Command="{Binding DelDriverCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Spacing="5" Padding="15">
+        <Label Text="Nome:" FontSize="Medium" />
+        <Label Text="{Binding Nome}" FontSize="Small"/>
+        <Label Text="CPF:" FontSize="Medium" />
+        <Label Text="{Binding CPF}" FontSize="Small"/>
+        <Label Text="Vencimento:" FontSize="Medium" />
+        <Label Text="{Binding Vencimento}" FontSize="Small"/>
+        <Label Text="Categoria:" FontSize="Medium" />
+        <Label Text="{Binding Categoria}" FontSize="Small"/>
+        <Label Text="Veículo:" FontSize="Medium"/>
+        <Label Text="{Binding Veiculo}" FontSize="Small"/>
+        <Label Text="Secretaria:" FontSize="Medium" />
+        <Label Text="{Binding Secretaria}" FontSize="Small"/>
+    </StackLayout>
+    
+</ContentPage>

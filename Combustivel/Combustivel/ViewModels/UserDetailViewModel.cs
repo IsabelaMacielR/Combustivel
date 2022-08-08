@@ -12,9 +12,8 @@ namespace Combustivel.ViewModels
         private string userId;
         private string nome;
         private string cpf;
-        private string vencimento;
-        private string categoria;
-        private string secretaria;
+        private string tipo;
+
         public string Id { get; set; }
 
         public string Nome
@@ -29,22 +28,10 @@ namespace Combustivel.ViewModels
             set => SetProperty(ref cpf, value);
         }
 
-        public string Vencimento
+        public string Tipo
         {
-            get => vencimento;
-            set => SetProperty(ref vencimento, value);
-        }
-
-        public string Categoria
-        {
-            get => categoria;
-            set => SetProperty(ref categoria, value);
-        }
-
-        public string Secretaria
-        {
-            get => secretaria;
-            set => SetProperty(ref secretaria, value);
+            get => tipo;
+            set => SetProperty(ref tipo, value);
         }
 
         public string UserId
@@ -68,9 +55,7 @@ namespace Combustivel.ViewModels
                 Id = user.Id;
                 Nome = user.Nome;
                 CPF = user.CPF;
-                Vencimento = user.Vencimento;
-                Categoria = user.Categoria;
-                Secretaria = user.Secretaria;
+                Tipo = user.Tipo;
             }
             catch (Exception)
             {

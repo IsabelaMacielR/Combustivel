@@ -86,6 +86,10 @@
         <ShellContent Route="UserPage" ContentTemplate="{DataTemplate local:UserPage}" />
     </FlyoutItem>
 
+    <FlyoutItem Title="Motoristas" Icon="https://cdn-icons-png.flaticon.com/512/17/17797.png">
+        <ShellContent Route="DriverPage" ContentTemplate="{DataTemplate local:DriverPage}" />
+    </FlyoutItem>
+
     <FlyoutItem Title="Veículos" Icon="https://cdn-icons-png.flaticon.com/512/55/55268.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />
     </FlyoutItem>
